@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f5; /* PCで見たときの左右余白を分かりやすく */
+}
+
+.app{
+    width: 100%;
+    max-width: 430px;   /* iPhone Pro Max系に寄せるなら430前後 */
+    margin: 0 auto;     /* PCでは中央寄せ */
+    min-height: 100vh;  /* 画面高いっぱい */
+    background: #fff;
+
+    justify-content: center;
+    text-align: center;
+}
+
+.header p{
+	color:gray;
+}
+
+.header{
+	padding-top:60px;
+}
+
+img{
+    object-fit: cover;
+}
+
+h1{
+    font-size: 64px;
+}
+h2{
+    font-size: 26px;
+}
+
+.container {
+    padding-bottom: 50px;
+}
+
+.flex{
+    display: flex;
+}
+
+.center{
+	align-items: center; 
+	justify-content: center;
+}
+
+#app_explain{
+	max-width: 70%;
+	padding-top : 20px;
+}
+
+#app_explain p{
+    font-size: 16px;
+    margin: auto;
+	color:gray;
+}
+
+.answer{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+    padding: 30px 0px;
+}
+
+.answer button{
+    font-size: 20px;
+
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #f09199;
+    border: none;
+	color:white;
+}
+
+.answer button:hover{
+    background-color: #2f4f4f;
+    cursor: pointer;
+    color: white;
+}
+
+#backBtn, #restartBtn, #startBtn{
+    border: none;
+    border-bottom: 2px solid #2f4f4f;
+    color: #2f4f4f;
+    width: 80px;
+    padding: 5px 0;
+    margin:20px 10px 0px 10px;
+    background-color: #fff;
+    font-size: 14px;
+}
+#startBtn{
+    width: 120px;
+}
+
+#backBtn:hover, #restartBtn:hover, #startBtn:hover{
+    cursor: pointer;
+    border-bottom: 2px solid #f09199;
+    color: #f09199;
+}
+
+/* result.html */
+.title{
+    padding-top: 10px;
+    font-size: 20px;
+    color: #f09199;
+}
+
+.title_space{
+	padding: 15px 0;
+	font-size: 20px;
+	color: #f09199;
+}
+
+.list{
+    border-bottom: 1px solid #ababab;
+    padding: 10px;
+    max-width: 80%;
+    margin: auto;
+    text-align: left;
+}
+
+.shopImg img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.list p{
+    font-size: 10px;
+}
+
+h4{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.icon{
+    align-items: center;
+}
+.icon img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.icon p{
+    font-size: 8px;
+}
+
+.address{
+    margin-bottom: 10px;
+}
+
+.fav-btn {
+    background-color: #fff;
+    border: 1px solid #f09199;
+    color: #f09199;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.fav-btn:hover {
+    background-color: #f09199;
+    color: #fff;
+}
+
+.delete-btn {
+    background-color: #fff;
+    border: 1px solid #ababab; /* 控えめなグレー */
+    color: #ababab;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #f09199; /* ホバー時はテーマカラーのピンクに */
+    color: #fff;
+    border-color: #f09199;
+}
+
+.logo img {
+    height: auto;
+}
+
+#logo_top img{
+	max-width: 180px;   /* 画像の横幅を固定 */
+}
+
+#logo_top{
+	padding: 40px 0;
+}
+
+#logo_result img{
+	max-width: 80px;
+	padding-top: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 縦に並べて中央に寄せる */
+}
+
+.random{
+	text-align:center; 
+	margin: 16px 0;
+}
+
+.random button{
+	padding: 10px 24px;
+	border-radius: 20px;
+	border: none;
+	background-color: #f19999;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.random button:hover{
+    background-color: #2f4f4f;
+    cursor: pointer;
+    color: white;
+}
+
+#title_random{
+	padding-bottom: 20px;
+}

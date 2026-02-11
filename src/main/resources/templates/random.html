@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム抽出</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script defer src="/js/result.js"></script>
+</head>
+<body>
+    <div class="app">
+		<div class="header logo center" id="logo_result">
+			<img th:src="@{/images/KYOSPOlogo.png}" alt="KYOSPOロゴ">
+		</div>
+        <div class="main">
+			<div id="result_explain">
+			    <div class="title" id="title_random">
+			        <h3>あなたの行き先は...</h3>
+			    </div>
+				
+				<div th:if="${spot != null}">
+					
+					<article class="list flex">
+						<div class="shopImg">
+							<img th:src="@{${spot.imagePath}}" alt="店舗画像">
+						</div>
+						<div>	
+							<h4 th:text="${spot.name}">店舗名</h4>
+							<div class="address">
+								<p th:text="${spot.address}">住所</p>
+							</div>
+							<div class="flex icon" th:if="${!#strings.isEmpty(spot.hpUrl)}">
+								<img src="/icon_img/icon_hp.png" alt="hpicon">
+								<p>
+									<a th:href="${spot.hpUrl}" target="_blank" th:text="${spot.hpUrl}">HP URL</a>
+								</p>
+							</div>
+							<div class="flex icon" th:if="${!#strings.isEmpty(spot.instaUrl)}">
+								<img src="/icon_img/icon_instagram.png" alt="instagramicon" class="icon">
+								<p>
+									<a th:href="${spot.instaUrl}" target="_blank" th:text="${spot.instaUrl}">Instagram</a>
+								</p>
+							</div>
+							<div th:if="${session.loginUser != null}" style="margin-top: 10px;">
+								<form action="/favorite" method="post">
+									<input type="hidden" name="spotId" th:value="${spot.id}">
+									<button type="submit" style="background: none; border: 1px solid #f09199; color: #f09199; padding: 5px 10px; border-radius: 20px; cursor: pointer;">
+										❤ お気に入りに追加
+									</button>
+								</form>
+							</div>
+						</div>
+					</article>
+					
+				</div>
+				
+
+				<div th:if="${spot == null}">
+							    <p th:text="${message}">スポットが見つかりません</p>
+				</div>
+			</div>
+            <div class="container">
+        		<div style="margin-top:12px;">
+					<a href="/">
+                    	<button id="startBtn" type="button">最初からやり直す</button>
+					</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+    </div>
+</body>
+</html>
