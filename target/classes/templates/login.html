@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン - KyotoApp</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+	<div class="app">
+	    <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 10px;">
+	        
+	        <div class="logo" style="margin-bottom: -10px;"> 
+	            <img th:src="@{/images/KYOSPOlogo.png}" alt="KYOSPOロゴ" 
+	                 style="max-width: 200px; height: auto; display: block; margin: 0 auto;">
+	        </div>
+
+            <div class="title_space" style="margin-bottom: 20px;">
+                <h3 style="margin: 0; color: #ffb6c1;">ログイン</h3>
+            </div>
+
+            <form action="/login" method="post" style="width: 100%; max-width: 300px; margin-bottom: 20px;">
+                <div style="margin-bottom: 15px;">
+                    <input type="text" name="username" placeholder="ユーザー名" 
+                           style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ababab; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <input type="password" name="password" placeholder="パスワード" 
+                           style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ababab; box-sizing: border-box;">
+                </div>
+                
+                <div class="answer">
+                    <button type="submit" style="width: 100%;">ログイン</button>
+                </div>
+            </form>
+            
+            <div>
+                <a href="/">
+                    <button id="backBtn" type="button">戻る</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

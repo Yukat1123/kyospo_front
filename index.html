@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>application_takai</title>
+    <script defer src="/js/index.js"></script>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+	<div class="app">
+	    <div class="header center">
+	        <span th:if="${session.loginUser != null}">
+	            <span th:text="${session.loginUser.username} + 'さん'"></span>
+	            <a href="/mypage" style="color: #f09199; text-decoration: none; font-size: 14px; margin-left: 10px; font-weight: bold;">お気に入り</a>
+	            <a href="/logout" style="color: #ababab; text-decoration: none; font-size: 14px; margin-left: 10px;">ログアウト</a>
+	        </span>
+	    </div>
+
+	    <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+	        <div class="logo center" id= logo_top style="margin-bottom: -15px; margin-top: -10px;">
+	            <img th:src="@{/images/KYOSPOlogo.png}" alt="KYOSPOロゴ" 
+	                 style="max-width: 160px; height: auto; display: block;">
+	        </div>
+		    
+		    <div id="app_explain" style="text-align: center;">
+                <p>
+                    空きコマや昼休みに<br>
+                    ちょこっとおでかけしたい<br>
+					あなたへ。<br><br>
+                    あなたの今の気分に<br>
+					ぴったりな場所を提案します。
+                </p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="question">
+                <h2 id="questionText">今の気分は？</h2>
+            </div>
+            <div class="answer" id="answerArea"></div>
+            <div>
+                <button id="backBtn" type="button">戻る</button>
+                <button id="restartBtn" type="button">最初から</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
